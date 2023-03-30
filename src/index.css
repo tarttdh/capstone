@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif; */
+  font-family:'Cambria';
+  font-variant:'small-caps';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+h3{
+  font-family: 'Cambria';
+  font-variant: small-caps;
+  font-weight: bold;
+}
+
+
+p{
+  font-family: "Karma";
+}
+
+
+.prof-title{
+  font-variant: small-caps;
+  font-weight: bold;
+}
+
+
+ul{
+  font-family: 'Cambria';
+}
+
+
+.bio-modal .modal-dialog {
+  max-width: 50%;
+}
+
+
+.card-title{
+  font-family: "Cambria";
+  font-variant: small-caps;
+  font-size: large;
+  font-weight: bold;
+}
+
+
+.card-text{
+  font-family: "Karma";
+}
+
+
+.card-custom-text{
+  font-size: "xx-small";
+  font-weight: "thin";
+}
+
+
+.small-caps {
+  font-variant: small-caps;
+  font-size: larger;
+  font-weight: bold;
+}
+
+
+
+
+.navbar{
+  font-family: 'Karma';
+}
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

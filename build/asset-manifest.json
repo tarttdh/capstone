@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.05d5a086.css",
+    "main.js": "/static/js/main.084cda9e.js",
+    "static/media/Image.jpg": "/static/media/Image.693799847e1cfdc07198.jpg",
+    "static/media/teixeira.png": "/static/media/teixeira.a5e988889a4ee0dcb94e.png",
+    "static/media/blankshot.png": "/static/media/blankshot.67dfb79a71fe80e977f4.png",
+    "static/media/blankprofile.png": "/static/media/blankprofile.cf591d555f64c7ee5b1a.png",
+    "index.html": "/index.html",
+    "main.05d5a086.css.map": "/static/css/main.05d5a086.css.map",
+    "main.084cda9e.js.map": "/static/js/main.084cda9e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.05d5a086.css",
+    "static/js/main.084cda9e.js"
+  ]
+}
