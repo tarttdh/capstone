@@ -38,7 +38,6 @@ import Russia from "./Frontend/Pages/recent/Russia";
 import Gov from "./Frontend/Pages/recent/Gov";
 import Micro from "./Frontend/Pages/recent/micro";
 import Pandemic from "./Frontend/Pages/recent/Pandemic";
-import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse";
 
 //changes were made
 
