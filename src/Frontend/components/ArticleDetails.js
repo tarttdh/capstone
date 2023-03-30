@@ -11,12 +11,19 @@ const leftButtonStyles = {
   padding: "5px 10px",
   fontSize: "12px",
   marginRight: "10px",
+  backgroundColor: "rgb(134, 1, 1)", /* set background color to custom primary color */
+  borderColor: "rgb(134, 1, 1)", /* set border color to custom primary color */
+  
 };
+
 const rightButtonStyles = {
   float: "right",
   padding: "5px 10px",
   fontSize: "12px",
   marginRight: "10px",
+  backgroundColor: "rgb(134, 1, 1)", /* set background color to custom primary color */
+  borderColor: "rgb(134, 1, 1)", /* set border color to custom primary color */
+  
 };
 
 const modalArticleStyle_notes = {

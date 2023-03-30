@@ -13,7 +13,8 @@ const getUser = async(req, res, next) => {
     try{
         await client.connect(); 
         const db = client.db('SupplyChain'); 
-        user = await db.collection('users').findOne({ email: req.body.email }); 
+        user = await db.collection('users').findOne({
+            email: { $regex: new RegExp(req.body.email, 'i')}, }); 
 
     } catch (error){
         return res.json({message: 'Could not retrieve user. '}); 

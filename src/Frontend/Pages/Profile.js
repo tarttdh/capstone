@@ -86,10 +86,7 @@ const Profile = () => {
               <Card.Title>{note.articleTitle}</Card.Title>
               <Button
                 variant="primary"
-                style={{
-                  backgroundColor: "darkgreen",
-                  border: "darkgreen 1px solid",
-                }}
+                
                 onClick={() => openFullNote(note.id)}
               >
                 {openNote !== note.id ? "open Note" : <NoteDetails note={note} className="popupModal" />}

@@ -128,14 +128,13 @@ export class AllCategories extends Component {
                        <ArticleDetails article={article} className="popupModal"/>
                      }
                       <ListGroup.Item onClick={() =>{selectedArticle(article._id)}} >Written by:  {article.Author || 'none'}</ListGroup.Item>
-                      <ListGroup.Item onClick={() =>{selectedArticle(article._id)}}  >Read Time: {article.Read_Time} min</ListGroup.Item>
+                      <ListGroup.Item onClick={() =>{selectedArticle(article._id)}} >Read Time: {article.Read_Time} min</ListGroup.Item>
                       <ListGroup.Item onClick={() =>{selectedArticle(article._id)}} >Date: {article.Date ? article.Date : 'NA'}</ListGroup.Item>
                       <ListGroup.Item onClick={() =>{selectedArticle(article._id)}} >
                       <div style={{textAlign: 'center'}}>
                       <Button
                         variant="primary"
                         style={{
-                          backgroundColor: "darkgreen",
                           border: "darkgreen 1px solid",
                         }}
                         onClick={() =>{selectedArticle(article._id)}} >Read More

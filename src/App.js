@@ -38,6 +38,7 @@ import Russia from "./Frontend/Pages/recent/Russia";
 import Gov from "./Frontend/Pages/recent/Gov";
 import Micro from "./Frontend/Pages/recent/micro";
 import Pandemic from "./Frontend/Pages/recent/Pandemic";
+import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse";
 
 //changes were made
 
@@ -75,13 +76,23 @@ function App() {
 
   const { user, isLoading, isAuthenticated, logout, loginWithRedirect } = useAuth0();
 
+  
+  const [show, setShow] = useState(false);
 
   const [showNav, setShowNav] = useState(false);
 
   function toggleNav() {
-    setShowNav(!showNav)
+    console.log('Toggling nav');
+    setShowNav(!showNav);
     setShowArc(false);
   }
+  
+  function handleCloseNav() {
+    console.log('Closing nav');
+    setShowNav(false);
+    setShowArc(false);
+  }
+  
   const [showArc, setShowArc] = useState(false);
 
   function toggleArc() {
@@ -194,12 +205,15 @@ function App() {
               </li>
               <li>
               <div className="text-end pb-sm-0 pb-2 pl-sm-0 pl-1 justify-content-end justify-content-end right-0">
+                {isAuthenticated === false?(
               <Button className="btn bg-primary btn-bg-primary btn-outline-light me-2" onClick={() => loginWithRedirect()}>
                   Login
                 </Button>
+                ): (
                 <Button className="btn bg-primary btn-outline-light me-2" onClick={() => logout() }>
                   Logout
                 </Button>
+                )}
               </div>
               </li>
               </ul>
@@ -207,18 +221,19 @@ function App() {
         </header>
           {showNav && (
             <div className="d-block d-sm-none">
-            <Navbar className="dropdown-custom-r py-0 bg-secondary inset-shadow flex-column">
+            <Navbar className="dropdown-custom-r py-0 bg-secondary inset-shadow flex-column" >
               <div onClick={toggleNav} className="small-caps btn px-3 text-white">Recent</div>
-              <div className= "text-white bold"> | </div>
-                <Nav.Link as={Link} to={"/micro"} className="text-white">micro</Nav.Link>
-                <Nav.Link as={Link} to={"/macro"} className="text-white">macro</Nav.Link>
-                <Nav.Link as={Link} to={"/company_activity"} className="text-white">Company Activity</Nav.Link>
-                <Nav.Link as={Link} to={"/sustainability"} className="text-white">Sustainability</Nav.Link>
-                <Nav.Link as={Link} to={"/Reports"} className="text-white">Reports</Nav.Link>
-                <Nav.Link as={Link} to={"/Russia/Ukraine"} className="text-white">Russia/Ukraine</Nav.Link>
-                <Nav.Link as={Link} to={"/Pandemic"} className="text-white">Pandemic</Nav.Link>
-                <Nav.Link as={Link} to={"/Gov"} className="text-white">Gov</Nav.Link>
-                <Nav.Link as={Link} to={"/Broad_SCIM_Trends"} className="text-white">Broad SCIM Trends</Nav.Link>
+              <div className= "text-white bold" > </div>
+              
+                <Nav.Link as={Link} to={"/micro"} className="text-white" onClick={handleCloseNav} >micro</Nav.Link>
+                <Nav.Link as={Link} to={"/macro"} className="text-white " onClick={handleCloseNav}>macro</Nav.Link>
+                <Nav.Link as={Link} to={"/company_activity"} className="text-white" onClick={handleCloseNav}>Company Activity</Nav.Link>
+                <Nav.Link as={Link} to={"/sustainability"} className="text-white" onClick={handleCloseNav}>Sustainability</Nav.Link>
+                <Nav.Link as={Link} to={"/Reports"} className="text-white" onClick={handleCloseNav}>Reports</Nav.Link>
+                <Nav.Link as={Link} to={"/Russia/Ukraine"} className="text-white" onClick={handleCloseNav}>Russia/Ukraine</Nav.Link>
+                <Nav.Link as={Link} to={"/Pandemic"} className="text-white" onClick={handleCloseNav}>Pandemic</Nav.Link>
+                <Nav.Link as={Link} to={"/Gov"} className="text-white" onClick={handleCloseNav}>Gov</Nav.Link>
+                <Nav.Link as={Link} to={"/Broad_SCIM_Trends"} className="text-white" onClick={handleCloseNav}>Broad SCIM Trends</Nav.Link>
               </Navbar>
             </div>
           )}
@@ -226,16 +241,16 @@ function App() {
                <div className="d-none d-sm-block d-md-block">
                <Navbar className="dropdown-custom-r py-0 bg-secondary inset-shadow">
                  <div onClick={toggleNav} className="small-caps btn px-3 text-white">Recent</div>
-                 <div className= "text-white bold"> | </div>  
-                <Nav.Link as={Link} to={"/micro"} className="text-white">micro</Nav.Link>
-                <Nav.Link as={Link} to={"/macro"} className="text-white">macro</Nav.Link>
-                <Nav.Link as={Link} to={"/company_activity"} className="text-white">Company Activity</Nav.Link>
-                <Nav.Link as={Link} to={"/sustainability"} className="text-white">Sustainability</Nav.Link>
-                <Nav.Link as={Link} to={"/Reports"} className="text-white">Reports</Nav.Link>
-                <Nav.Link as={Link} to={"/Russia/Ukraine"} className="text-white">Russia/Ukraine</Nav.Link>
-                <Nav.Link as={Link} to={"/Pandemic"} className="text-white">Pandemic</Nav.Link>
-                <Nav.Link as={Link} to={"/Gov"} className="text-white">Gov</Nav.Link>
-                <Nav.Link as={Link} to={"/Broad_SCIM_Trends"} className="text-white">Broad SCIM Trends</Nav.Link>
+                 <div className= "text-white bold">  </div>  
+                <Nav.Link as={Link} to={"/micro"} className="text-white" onClick={handleCloseNav}>micro</Nav.Link>
+                <Nav.Link as={Link} to={"/macro"} className="text-white" onClick={handleCloseNav}>macro</Nav.Link>
+                <Nav.Link as={Link} to={"/company_activity"} className="text-white" onClick={handleCloseNav}>Company Activity</Nav.Link>
+                <Nav.Link as={Link} to={"/sustainability"} className="text-white" onClick={handleCloseNav}>Sustainability</Nav.Link>
+                <Nav.Link as={Link} to={"/Reports"} className="text-white" onClick={handleCloseNav}>Reports</Nav.Link>
+                <Nav.Link as={Link} to={"/Russia/Ukraine"} className="text-white" onClick={handleCloseNav}>Russia/Ukraine</Nav.Link>
+                <Nav.Link as={Link} to={"/Pandemic"} className="text-white" onClick={handleCloseNav}>Pandemic</Nav.Link>
+                <Nav.Link as={Link} to={"/Gov"} className="text-white" onClick={handleCloseNav}>Gov</Nav.Link>
+                <Nav.Link as={Link} to={"/Broad_SCIM_Trends"} className="text-white" onClick={handleCloseNav}>Broad SCIM Trends</Nav.Link>
               </Navbar>
             </div>
           )}
@@ -246,16 +261,16 @@ function App() {
            <div className="d-block d-sm-none">
            <Navbar className="dropdown-custom-a py-0 bg-secondary inset-shadow flex-column">
              <div onClick={toggleArc} className="small-caps btn px-3 text-white">Archives</div>
-             <div className= "text-white bold"> | </div> 
-                <Nav.Link as={Link} to={"/arc_micro"} className="text-white">Micro</Nav.Link>
-                <Nav.Link as={Link} to={"/arc_macro"} className="text-white">Macro</Nav.Link>
-                <Nav.Link as={Link} to={"/arc_company_activity"} className="text-white">Company Activity</Nav.Link>
-                <Nav.Link as={Link} to={"/arc_sustainability"} className="text-white">Sustainability</Nav.Link>
-                <Nav.Link as={Link} to={"/arc_Reports"} className="text-white">Reports</Nav.Link>
-                <Nav.Link as={Link} to={"/arc_Russia/Ukraine"} className="text-white">Russia/Ukraine</Nav.Link>
-                <Nav.Link as={Link} to={"/arc_Pandemic"} className="text-white">Pandemic</Nav.Link>
-                <Nav.Link as={Link} to={"/arc_Gov"} className="text-white">Gov</Nav.Link>
-                <Nav.Link as={Link} to={"/arc_Broad_SCIM_Trends"} className="text-white">Broad Scrim Trends</Nav.Link>
+             <div className= "text-white bold">  </div> 
+                <Nav.Link as={Link} to={"/arc_micro"} className="text-white" onClick={handleCloseNav}>Micro</Nav.Link>
+                <Nav.Link as={Link} to={"/arc_macro"} className="text-white" onClick={handleCloseNav}>Macro</Nav.Link>
+                <Nav.Link as={Link} to={"/arc_company_activity"} className="text-white" onClick={handleCloseNav}>Company Activity</Nav.Link>
+                <Nav.Link as={Link} to={"/arc_sustainability"} className="text-white" onClick={handleCloseNav}>Sustainability</Nav.Link>
+                <Nav.Link as={Link} to={"/arc_Reports"} className="text-white" onClick={handleCloseNav}>Reports</Nav.Link>
+                <Nav.Link as={Link} to={"/arc_Russia/Ukraine"} className="text-white" onClick={handleCloseNav}>Russia/Ukraine</Nav.Link>
+                <Nav.Link as={Link} to={"/arc_Pandemic"} className="text-white" onClick={handleCloseNav}>Pandemic</Nav.Link>
+                <Nav.Link as={Link} to={"/arc_Gov"} className="text-white" onClick={handleCloseNav}>Gov</Nav.Link>
+                <Nav.Link as={Link} to={"/arc_Broad_SCIM_Trends"} className="text-white" onClick={handleCloseNav}>Broad Scrim Trends</Nav.Link>
               </Navbar>
             </div>
           )}
@@ -263,16 +278,16 @@ function App() {
             <div className="d-none d-sm-block d-md-block">
             <Navbar className="dropdown-custom-a py-0 bg-secondary inset-shadow">
               <div onClick={toggleArc} className="small-caps btn px-3 text-white">Archives</div>
-              <div className= "text-white bold"> | </div>
-                <Nav.Link as={Link} to={"/arc_micro"} className="text-white">Micro</Nav.Link>
-                <Nav.Link as={Link} to={"/arc_macro"} className="text-white">Macro</Nav.Link>
-                <Nav.Link as={Link} to={"/arc_company_activity"} className="text-white">Company Activity</Nav.Link>
-                <Nav.Link as={Link} to={"/arc_sustainability"} className="text-white">Sustainability</Nav.Link>
-                <Nav.Link as={Link} to={"/arc_Reports"} className="text-white">Reports</Nav.Link>
-                <Nav.Link as={Link} to={"/arc_Russia/Ukraine"} className="text-white">Russia/Ukraine</Nav.Link>
-                <Nav.Link as={Link} to={"/arc_Pandemic"} className="text-white">Pandemic</Nav.Link>
-                <Nav.Link as={Link} to={"/arc_Gov"} className="text-white">Gov</Nav.Link>
-                <Nav.Link as={Link} to={"/arc_Broad_SCIM_Trends"} className="text-white">Broad Scim Trends</Nav.Link>
+              <div className= "text-white bold"></div>
+                <Nav.Link as={Link} to={"/arc_micro"} className="text-white" onClick={handleCloseNav}>Micro</Nav.Link>
+                <Nav.Link as={Link} to={"/arc_macro"} className="text-white" onClick={handleCloseNav}>Macro</Nav.Link>
+                <Nav.Link as={Link} to={"/arc_company_activity"} className="text-white" onClick={handleCloseNav}>Company Activity</Nav.Link>
+                <Nav.Link as={Link} to={"/arc_sustainability"} className="text-white" onClick={handleCloseNav}>Sustainability</Nav.Link>
+                <Nav.Link as={Link} to={"/arc_Reports"} className="text-white" onClick={handleCloseNav}>Reports</Nav.Link>
+                <Nav.Link as={Link} to={"/arc_Russia/Ukraine"} className="text-white" onClick={handleCloseNav}>Russia/Ukraine</Nav.Link>
+                <Nav.Link as={Link} to={"/arc_Pandemic"} className="text-white" onClick={handleCloseNav}>Pandemic</Nav.Link>
+                <Nav.Link as={Link} to={"/arc_Gov"} className="text-white" onClick={handleCloseNav}>Gov</Nav.Link>
+                <Nav.Link as={Link} to={"/arc_Broad_SCIM_Trends"} className="text-white" onClick={handleCloseNav}>Broad Scim Trends</Nav.Link>
               </Navbar>
             </div>
           )}

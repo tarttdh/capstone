@@ -75,3 +75,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.btn-primary {
+  background-color: rgb(134, 1, 1);
+}
+
+/* index.css */
+.btn-primary:hover {
+  background-color: red;
+}
+
+/* index.css */
+.btn-outline-primary:hover {
+  border-color: rgb(255, 92, 70);
+}
